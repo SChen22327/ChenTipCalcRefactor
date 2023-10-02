@@ -12,5 +12,9 @@ public class TipCalculator {
         totalBillBeforeTip += cost;
     }
 
+    public double getTotalBillBeforeTip() {
+        return totalBillBeforeTip;
+    }
+
 
 }
