@@ -5,13 +5,19 @@ public class TipCalculator {
 
     public TipCalculator(int numPeople, double tipPercentage) {
         this.numPeople = numPeople;
-        this.tipPercentage = tipPercentage;
+        if (tipPercentage / (int) tipPercentage > 1) {
+            this.tipPercentage = tipPercentage;
+        } else {
+            this.tipPercentage = (int) tipPercentage;
+        }
     }
-
     public void addMeal(double cost) {
         totalBillBeforeTip += cost;
     }
-
+    public double returnRoundedToTwo(double num) {
+        double tempNum = Math.round(num * 100) / 100.0;
+        return tempNum;
+    }
     public double getTotalBillBeforeTip() {
         return totalBillBeforeTip;
     }
