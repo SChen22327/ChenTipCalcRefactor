@@ -33,5 +33,6 @@ public class Main {
         totalBill = tc.perPersonCostBeforeTip();
         System.out.println("Each person pays $" + totalBill + " before tips");
         System.out.println();
+
     }
 }
