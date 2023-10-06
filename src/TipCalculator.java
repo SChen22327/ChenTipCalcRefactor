@@ -18,6 +18,9 @@ public class TipCalculator {
         double tempNum = Math.round(num * 100) / 100.0;
         return tempNum;
     }
+    public double divideBy(double dividend, double divisor) {
+        return returnRoundedToTwo(dividend/divisor);
+    }
     public double getTotalBillBeforeTip() {
         return totalBillBeforeTip;
     }
