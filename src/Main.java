@@ -25,14 +25,18 @@ public class Main {
         }
         totalBill = tc.returnRoundedToTwo(tc.getTotalBillBeforeTip());
         System.out.println("The bill before tips is $" + String.format("%.2f", totalBill));
-        System.out.println("The tip percentage is " + tc.getTipPercentage() + "%");
+        if (tc.getTipPercentage() / (int) tc.getTipPercentage() > 1) {
+            System.out.println("The tip percentage is " + tc.getTipPercentage() + "%");
+        } else {
+            System.out.println("The tip percentage is " + (int) tc.getTipPercentage() + "%");
+        }
         tip = tc.returnRoundedToTwo(tc.tipAmount());
         System.out.println("The total amount of tip is $" + String.format("%.2f", tip));
         System.out.println("The total bill including tips is $" + String.format("%.2f", totalBill + tip));
         tip = tc.perPersonTipAmount();
         totalBill = tc.perPersonCostBeforeTip();
         System.out.println("Each person pays $" + totalBill + " before tips");
-        System.out.println();
-
+        System.out.println("Each person will pay $" + tip + " tips");
+        System.out.println("Each person will pay $" + (tip + totalBill) + " in total");
     }
 }
